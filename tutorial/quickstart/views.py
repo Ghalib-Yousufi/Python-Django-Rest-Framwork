@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, Group
 from tutorial.quickstart.models import Ticket
 from rest_framework import viewsets
 from tutorial.quickstart.serializers import UserSerializer, GroupSerializer, TicketSerializer
+from tutorial.quickstart.permissions import AdminsPermission
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -28,3 +29,4 @@ class TicketViewSet(viewsets.ModelViewSet):
     """
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
+    permission_classes = (AdminsPermission,)

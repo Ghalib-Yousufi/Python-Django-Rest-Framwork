@@ -14,7 +14,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'name')
 
 
-class TicketSerializer(serializers.HyperlinkedModelSerializer):
+class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = ('created', 'description', 'severity', 'assignee', 'reporter', 'is_done', 'done_date')
